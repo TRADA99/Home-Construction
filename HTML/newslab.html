@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concrete Material Calculator for Slab</title>
+    <link rel="stylesheet" href="/CSS/styles.css">
+</head>
+<body>
+    <h1>Concrete Material Calculator for Slab</h1>
+    <div class="container">
+        <!-- Roof Dimensions Section -->
+        <div class="section">
+            <h2>Roof Dimensions</h2>
+            <div class="input-group">
+                <label for="slabType">Select Slab Type:</label>
+                <select id="slabType" onchange="updateInputs()">
+                    <option value="">Select</option>
+                    <option value="cube">Cube</option>
+                    <option value="triangle">Triangle</option>
+                    <option value="pyramid">Pyramid</option>
+                    <option value="sphere">Sphere</option>
+                    <option value="cone">Cone</option>
+                    <option value="cylinder">Cylinder</option>
+                    <option value="holo-cylinder">Hollow Cylinder</option>
+                </select>
+            </div>
+            <form id="dynamicInputs">
+                <!-- Dynamic inputs will be injected here -->
+            </form>
+
+            <!-- Not Modified -->
+            <div class="input-group">
+                <label for="numSlabs">Number of Slabs:</label>
+                <input type="number" id="numSlabs" min="1" value="1">
+            </div>
+        </div>
+
+        <!-- Material Ratios Section -->
+        <div class="section">
+            <h2>Material Ratios</h2>
+            <div class="input-group">
+                <label for="cementRatio">Cement:</label>
+                <input type="number" id="cementRatio" value="1">
+            </div>
+            <div class="input-group">
+                <label for="sandRatio">Sand:</label>
+                <input type="number" id="sandRatio" value="2">
+            </div>
+            <div class="input-group">
+                <label for="aggregateRatio">Coarse Aggregate:</label>
+                <input type="number" id="aggregateRatio" value="4">
+            </div>
+        </div>
+
+        <button onclick="addSlab()">Add Slab</button>
+
+        <!-- Slabs Table -->
+        <table id="slabTable" border="1">
+            <thead>
+                <tr>
+                    <th>Sr. No</th>
+                    <th>Cubic Feet (Net Volume)</th>
+                    <th>Cubic Meters (Net Volume)</th>
+                    <th>NO.</th>
+                    <th>Structure Type</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <!-- Costs Section -->
+        <div class="section">
+            <h2>Costs</h2>
+            <div class="input-group">
+                <label for="cementCost">Cost of Cement (per bag):</label>
+                <input type="number" id="cementCost" value="400">
+            </div>
+            <div class="input-group">
+                <label for="sandCost">Cost of Sand (per cubic foot):</label>
+                <input type="number" id="sandCost" value="60">
+                <select id="sandCostUnit">
+                    <option value="cubic feet">Cubic Feet</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="aggregateCost">Cost of Coarse Aggregate (per cubic foot):</label>
+                <input type="number" id="aggregateCost" value="70">
+                <select id="aggregateCostUnit">
+                    <option value="cubic feet">Cubic Feet</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="laborCost">Labor Cost (per square foot):</label>
+                <input type="number" id="laborCost" value="70">
+                <select id="laborCostUnit">
+                    <option value="square feet">Square Feet</option>
+                </select>
+            </div>
+        </div>
+
+        <button onclick="calculateTotals()">Calculate Totals</button>
+
+        <!-- Result Section -->
+        <div id="output" style="display: none;"></div>
+    </div>
+    <script src="/JS/newslab.js"></script>
+</body>
+</html>

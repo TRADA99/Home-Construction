@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steel Weight Calculator</title>
+    <link rel="stylesheet" href="/CSS/styles.css">
+</head>
+<body>
+    <h1>Steel Weight Calculator</h1>
+    <div class="container">
+        <div class="section">
+            <h2>Pillar Rods</h2>
+            <div class="input-group">
+                <label for="height">Height of Pillar:</label>
+                <input type="number" id="height" value="10">
+                <select id="heightUnit">
+                    <option value="feet">Feet</option>
+                    <option value="inches">Inches</option>
+                    <option value="meters">Meters</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="numPillars">No. of Pillars:</label>
+                <input type="number" id="numPillars" value="1">
+            </div>
+            <div class="input-group">
+                <label for="steelRodThickness">Steel Rod Thickness (mm):</label>
+                <input type="number" id="steelRodThickness" value="10">
+            </div>
+            <div class="input-group">
+                <label for="steelRate">Steel Rate per kg (₹):</label>
+                <input type="number" id="steelRate" value="80">
+            </div>
+            <div class="input-group">
+                <label for="numSteelRod">Number of Steel Rods:</label>
+                <input type="number" id="numSteelRod" value="4">
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Ring Rods</h2>
+            <div class="input-group">
+                <label for="ringRodThickness">Ring Rod Thickness (mm):</label>
+                <input type="number" id="ringRodThickness" value="6">
+            </div>
+            <div class="input-group">
+                <label for="ringRodRate">Ring Rod Rate per kg (₹):</label>
+                <input type="number" id="ringRodRate" value="85">
+            </div>
+            <div class="input-group">
+                <label for="separation">Separation of Ring Bar (inches):</label>
+                <input type="number" id="separation" value="9">
+            </div>
+            <div class="input-group">
+                <label for="ringLength">Length of Ring Road (inches):</label>
+                <input type="number" id="ringLength" value="32">
+            </div>
+        </div>
+
+        <button onclick="addPillar()">Add Pillar</button>
+
+        <div id="pillarTable" style="display: none;">
+            <h3>Pillar Configurations</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th><nav>No.</nav></th>
+                        <th>Height (ft)</th>
+                        <th>Steel (mm)</th>
+                        <th>Ring (mm)</th>
+                        <th>Rods</th>
+                        <th>Pillars</th>
+                    </tr>
+                </thead>
+                <tbody id="pillarTableBody"></tbody>
+            </table>
+        </div>
+
+        <button onclick="calculateSteelWeight()">Calculate</button>
+
+        <div id="output" style="display: none;">
+            <h3>Calculation Results</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>mm</th>
+                        <th>Total Length (ft)</th>
+                        <th>Total Weight (kg)</th>
+                        <th>Total Cost (₹)</th>
+                    </tr>
+                </thead>
+                <tbody id="resultTableBody"></tbody>
+            </table>
+            <h4>Total Number of Rings: <span id="totalRings"></span></h4>
+            <h4>Total Weight (kg): <span id="totalWeight"></span></h4>
+            <h4>Total Cost (₹): <span id="totalCost"></span></h4>
+        </div>
+
+    </div>
+    <script src="/JS/beam steel.js"></script>
+</body>
+</html>

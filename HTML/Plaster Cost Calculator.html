@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plaster Cost Calculator</title>
+    <link rel="stylesheet" href="/CSS/styles.css">
+</head>
+
+<body>
+    <h1>Plaster Cost Calculator</h1>
+    <section class="container">
+
+    <h2>Wall Dimensions</h2>
+    <div class="input-group">
+        <label>Wall Length:</label>
+        <input type="number" id="wallLength" value="10">
+        <select id="lengthUnit">
+            <option value="feet">Feet</option>
+            <option value="inches">Inches</option>
+            <option value="meters">Meters</option>
+            <option value="cm">Centimeters</option>
+            <option value="mm">Millimeters</option>
+        </select>
+    </div>
+    <div class="input-group">
+        <label>Wall Height:</label>
+        <input type="number" id="wallHeight" value="10">
+        <select id="heightUnit">
+            <option value="feet">Feet</option>
+            <option value="inches">Inches</option>
+            <option value="meters">Meters</option>
+            <option value="cm">Centimeters</option>
+            <option value="mm">Millimeters</option>
+        </select>
+    </div>
+    <div class="input-group">
+        <label>Plaster Thickness:</label>
+        <input type="number" id="plasterThickness" value="1">
+        <select id="thicknessUnit">
+            <option value="inches">Inches</option>
+            <option value="feet">Feet</option>
+            <option value="meters">Meters</option>
+            <option value="cm">Centimeters</option>
+            <option value="mm">Millimeters</option>
+        </select>
+    </div>
+    <div class="input-group">
+        <label>No. of Walls:</label>
+        <input type="number" id="numWalls" value="1">
+    </div>
+    <div class="input-group">
+        <label>Free Area Length:</label>
+        <input type="number" id="freeLength" value="0">
+        <select id="freeLengthUnit">
+            <option value="feet">Feet</option>
+            <option value="inches">Inches</option>
+            <option value="meters">Meters</option>
+            <option value="cm">Centimeters</option>
+            <option value="mm">Millimeters</option>
+        </select>
+    </div>
+    <div class="input-group">
+        <label>Free Area Height:</label>
+        <input type="number" id="freeHeight" value="0">
+        <select id="freeHeightUnit">
+            <option value="feet">Feet</option>
+            <option value="inches">Inches</option>
+            <option value="meters">Meters</option>
+            <option value="cm">Centimeters</option>
+            <option value="mm">Millimeters</option>
+        </select>
+    </div>
+
+    <h2>Material Ratios</h2>
+    <div class="input-group">
+        <label>Cement Ratio:</label>
+        <input type="number" id="cementRatio" value="1">
+    </div>
+    <div class="input-group">
+        <label>Sand Ratio:</label>
+        <input type="number" id="sandRatio" value="6">
+    </div>
+
+    <h2>Costs</h2>
+    <div class="input-group">
+        <label>Cement Cost (₹ per bag):</label>
+        <input type="number" id="cementCost" value="400">
+    </div>
+    <div class="input-group">
+        <label>Sand Cost:</label>
+        <input type="number" id="sandCost" value="70">
+        <select id="sandCostUnit">
+            <option value="square feet">Per Square Feet</option>
+            <option value="square meters">Per Square Meter</option>
+        </select>
+    </div>
+    <div class="input-group">
+        <label>Labor Cost:</label>
+        <input type="number" id="laborCost" value="20">
+        <select id="laborCostUnit">
+            <option value="square feet">Per Square Feet</option>
+            <option value="square meters">Per Square Meter</option>
+        </select>
+    </div>
+
+    <button onclick="addWall()">Add Wall</button>
+
+    <h2>Added Walls</h2>
+    <table id="wallTable">
+        <thead>
+            <tr>
+                <th>Sr. No.</th>
+                <th>Length</th>
+                <th>Height</th>
+                <th>No. of Walls</th>
+                <th>Free Area</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Dynamically added rows will appear here -->
+        </tbody>
+    </table>
+
+    <button onclick="calculatePlaster()">Calculate</button>
+
+    <div id="results" style="display:none;">
+        <h2>Results</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Material</th>
+                    <th>Volume (CFT)</th>
+                    <th>Volume (CBM)</th>
+                    <th>Bags/Units</th>
+                    <th>Cost (₹)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Cement</td>
+                    <td id="cementVolume"></td>
+                    <td id="cementVolumeMeters"></td>
+                    <td id="cementBags"></td>
+                    <td id="cementCostRow"></td>
+                </tr>
+                <tr>
+                    <td>Sand</td>
+                    <td id="sandVolume"></td>
+                    <td id="sandVolumeMeters"></td>
+                    <td>-</td>
+                    <td id="sandCostRow"></td>
+                </tr>
+                <tr>
+                    <td>Labor</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td id="laborCostRow"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Total</h2>
+        <p>Total Cost: ₹<span id="totalCostSummary"></span></p>
+    </div>
+    <div id="plasterDetails">
+        <h3>Plaster Details</h3>
+        <p><strong>Plaster Volume:</strong> <span id="plasterVolumeFeet"></span> / <span
+                id="plasterVolumeMeters"></span></p>
+        <p><strong>Plaster Area:</strong> <span id="plasterAreaFeet"></span> / <span id="plasterAreaMeters"></span></p>
+        <p><strong>Free Area:</strong> <span id="freeAreaFeet"></span> / <span id="freeAreaMeters"></span></p>
+    </div>
+    </section>
+
+
+
+    <script src="/JS/plaster-calculator.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brick and Wall Calculator</title>
+    <link rel="stylesheet" href="/CSS/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Brick and Wall Calculator</h1>
+
+        <div class="section">
+            <h2>Wall Details</h2>
+            <div class="input-group">
+                <label for="wallLength">Wall Length:</label>
+                <input type="number" id="wallLength" value="10">
+                <select id="wallLengthUnit">
+                    <option value="feet">Feet</option>
+                    <option value="inches">Inches</option>
+                    <option value="meters">Meters</option>
+                    <option value="cm">Centimeters</option>
+                    <option value="mm">Millimeters</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="wallHeight">Wall Height:</label>
+                <input type="number" id="wallHeight" value="10">
+                <select id="wallHeightUnit">
+                    <option value="feet">Feet</option>
+                    <option value="inches">Inches</option>
+                    <option value="meters">Meters</option>
+                    <option value="cm">Centimeters</option>
+                    <option value="mm">Millimeters</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="wallThickness">Wall Thickness:</label>
+                <input type="number" id="wallThickness" value="9">
+                <select id="wallThicknessUnit">
+                    <option value="inches">Inches</option>
+                    <option value="feet">Feet</option>
+                    <option value="meters">Meters</option>
+                    <option value="cm">Centimeters</option>
+                    <option value="mm">Millimeters</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="mortarThickness">Mortar Thickness:</label>
+                <input type="number" id="mortarThickness" value="1">
+                <select id="mortarThicknessUnit">
+                    <option value="inches">Inches</option>
+                    <option value="feet">Feet</option>
+                    <option value="meters">Meters</option>
+                    <option value="cm">Centimeters</option>
+                    <option value="mm">Millimeters</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="numWalls">Number of Walls:</label>
+                <input type="number" id="numWalls" value="1">
+            </div>
+        </div>
+
+        <!-- Material Ratios Section -->
+        <div class="section">
+            <h2>Material Ratios</h2>
+            <div class="input-group">
+                <label for="cementRatio">Cement:</label>
+                <input type="number" id="cementRatio" value="1">
+            </div>
+            <div class="input-group">
+                <label for="sandRatio">Sand:</label>
+                <input type="number" id="sandRatio" value="6">
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Brick Details</h2>
+            <div class="input-group">
+                <label for="brickHeight">Brick Height:</label>
+                <input type="number" id="brickHeight" value="3">
+                <select id="brickHeightUnit">
+                    <option value="inches">Inches</option>
+                    <option value="feet">Feet</option>
+                    <option value="meters">Meters</option>
+                    <option value="cm">Centimeters</option>
+                    <option value="mm">Millimeters</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="brickWidth">Brick Width:</label>
+                <input type="number" id="brickWidth" value="4.5">
+                <select id="brickWidthUnit">
+                    <option value="inches">Inches</option>
+                    <option value="feet">Feet</option>
+                    <option value="meters">Meters</option>
+                    <option value="cm">Centimeters</option>
+                    <option value="mm">Millimeters</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Free Space</h2>
+            <div class="input-group">
+                <label for="freeLength">Free Space Length:</label>
+                <input type="number" id="freeLength" value="0">
+                <select id="freeLengthUnit">
+                    <option value="feet">Feet</option>
+                    <option value="inches">Inches</option>
+                    <option value="meters">Meters</option>
+                    <option value="cm">Centimeters</option>
+                    <option value="mm">Millimeters</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="freeWidth">Free Space Width:</label>
+                <input type="number" id="freeWidth" value="0">
+                <select id="freeWidthUnit">
+                    <option value="feet">Feet</option>
+                    <option value="inches">Inches</option>
+                    <option value="meters">Meters</option>
+                    <option value="cm">Centimeters</option>
+                    <option value="mm">Millimeters</option>
+                </select>
+            </div>
+        </div>
+        <button id="addFreeSpaceBtn">Add Free Space</button>
+        <div class="section">
+            <h2>Free Space Details (Windows/Doors)</h2>
+            <table id="freeSpaceTable">
+                <thead>
+                    <tr>
+                        <th>Free Space Length (ft)</th>
+                        <th>Free Space Height (ft)</th>
+                        <th>Number of Free Spaces</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Costs</h2>
+            <div class="input-group">
+                <label for="cementCost">Cement Cost (₹ per bag):</label>
+                <input type="number" id="cementCost" value="400">
+            </div>
+            <div class="input-group">
+                <label for="brickCost">Brick Cost (₹):</label>
+                <input type="number" id="brickCost" value="7">
+            </div>
+            <div class="input-group">
+                <label for="sandCost">Sand Cost:</label>
+                <input type="number" id="sandCost" value="70">
+                <select id="sandCostUnit">
+                    <option value="squareFeet">Per Square Feet</option>
+                    <option value="squareMeter">Per Square Meter</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="laborCost">Labor Cost:</label>
+                <input type="number" id="laborCost" value="20">
+                <select id="laborCostUnit">
+                    <option value="squareFeet">Per Square Feet</option>
+                    <option value="squareMeter">Per Square Meter</option>
+                </select>
+            </div>
+        </div>
+
+        
+        <button id="addWallBtn">Add Wall</button>
+        <h2>Wall Table</h2>
+        <table id="wallTable">
+            <thead>
+                <tr>
+                    <th>Wall Length (ft)</th>
+                    <th>Wall Height (ft)</th>
+                    <th>Wall Thickness (In)</th>
+                    <th>No. of Walls</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+        <button id="calculateBtn">Calculate</button>
+        <!-- Section to add multiple walls -->
+
+        <!-- Results Section -->
+        <h2>Results</h2>
+        <table id="resultTable">
+            <thead>
+                <tr>
+                    <th>Material</th>
+                    <th>Quantity</th>
+                    <th>Cubic Feet</th>
+                    <th>Cubic Meters</th>
+                    <th>Cost (₹)</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="results"></div>
+    </div>
+    <script src="/JS/newbrick.js"></script>
+</body>
+
+</html>
