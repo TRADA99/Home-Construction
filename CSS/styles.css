@@ -50,6 +50,10 @@ h1 {
     border-radius: 5px;
 }
 
+.input-group input{
+    width:50%
+}
+
 button {
     display: inline-block;
     padding: 10px 20px;
