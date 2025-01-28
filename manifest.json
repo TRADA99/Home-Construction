@@ -1,20 +1,50 @@
 {
-    "name": "Home Construction Application",
-    "short_name": "Construction Calculator",
-    "start_url": "/",
-    "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#000000",
-    "icons": [
-        {
-            "src": "/icons/icon-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "/icons/icon-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
-    ]
+"name": "Home Construction Application",
+"short_name": "Construction Calculator",
+"start_url": "https://trada99.github.io/Home-Construction",
+"display": "standalone",
+"description": "This is a Home Construction Cost Calculator Application",
+"lang": "En",
+"dir": "auto",
+"theme_color": "#007BFF",
+"background_color": "#FFFFFF",
+"orientation": "any",
+"icons": [
+    {
+        "src": "https://www.pwabuilder.com/assets/icons/icon_512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "maskable"
+    },
+    {
+        "src": "https://www.pwabuilder.com/assets/icons/icon_192.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "any"
+    }
+],
+"screenshots": [
+    {
+        "src": "https://www.pwabuilder.com/assets/screenshots/screen1.png",
+        "sizes": "2880x1800",
+        "type": "image/png",
+        "description": "A screenshot of the home page"
+    }
+],
+"related_applications": [
+    {
+        "platform":"windows",
+        "url": "https://trada99.github.io/Home-Construction/"
+    }
+],
+"prefer_related_applications": false,
+"shortcuts": [
+    {
+        "name":"Home Construction Cost Calculator",
+        "url":"/",
+        "description":"NA"
+    }
+],
+"display_override": ["window-controls-overlay"], 
+"protocol_handlers": [{"protocol":"mailto","url":"/newEmail?to=%s"}]
 }

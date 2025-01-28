@@ -1,0 +1,49 @@
+{
+  "appVersion": "1.0.0.0",
+  "appVersionCode": 1,
+  "backgroundColor": "#FFFFFF",
+  "display": "standalone",
+  "enableNotifications": true,
+  "enableSiteSettingsShortcut": true,
+  "fallbackType": "customtabs",
+  "features": {
+    "locationDelegation": {
+      "enabled": true
+    },
+    "playBilling": {
+      "enabled": false
+    }
+  },
+  "host": "https://trada99.github.io/Home-Construction/",
+  "iconUrl": "https://trada99.github.io/Home-Construction/icon.png",
+  "maskableIconUrl": "https://trada99.github.io/Home-Construction/maskable-icon.png",
+  "monochromeIconUrl": "https://trada99.github.io/Home-Construction/monochrome-icon.png",
+  "includeSourceCode": false,
+  "isChromeOSOnly": false,
+  "launcherName": "Home Construction Cost Calculator",
+  "name": "Home Construction Cost Calculator",
+  "navigationColor": "#007BFF",
+  "navigationColorDark": "#007BFF",
+  "navigationDividerColor": "#007BFF",
+  "navigationDividerColorDark": "#007BFF",
+  "orientation": "any",
+  "packageId": "com.hcc.app",
+  "shortcuts": [],
+  "signing": {
+    "file": null,
+    "alias": "my-key-alias",
+    "fullName": "Mukesh Kumar Bharti",
+    "organization": "TradaLabs",
+    "organizationalUnit": "Engineering",
+    "countryCode": "IN",
+    "keyPassword": "",
+    "storePassword": ""
+  },
+  "signingMode": "new",
+  "splashScreenFadeOutDuration": 300,
+  "startUrl": "/",
+  "themeColor": "#007BFF",
+  "themeColorDark": "#007BFF",
+  "shareTarget": [],
+  "webManifestUrl": "https://trada99.github.io/Home-Construction/manifest.json"
+}
