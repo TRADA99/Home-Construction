@@ -7,8 +7,8 @@
 "lang": "En",
 "dir": "auto",
 "theme_color": "#007BFF",
-"background_color": "#FFFFFF",
-"orientation": "any",
+"background_color": "#007BFF",
+"orientation": "portrait",
 "icons": [
     {
         "src": "logos/android-launchericon-512-512.png",
@@ -47,20 +47,7 @@
         "purpose": "any"
       }
 ],
-"screenshots": [
-    {
-        "src": "https://www.pwabuilder.com/assets/screenshots/screen1.png",
-        "sizes": "2880x1800",
-        "type": "image/png",
-        "description": "A screenshot of the home page"
-    }
-],
-"related_applications": [
-    {
-        "platform":"windows",
-        "url": "https://trada99.github.io/Home-Construction/"
-    }
-],
+
 "prefer_related_applications": false,
 "shortcuts": [
     {
