@@ -2,12 +2,12 @@
 "name": "Home Construction Application",
 "short_name": "Construction Calculator",
 "start_url": "https://trada99.github.io/Home-Construction",
-"display": "standalone",
+"display": "fullscreen",
 "description": "This is a Home Construction Cost Calculator Application",
-"lang": "En",
+"lang": "EN",
 "dir": "auto",
-"theme_color": "#007BFF",
-"background_color": "#007BFF",
+"theme_color": "#0070FF",
+"background_color": "#0070FF",
 "orientation": "portrait",
 "icons": [
     {
